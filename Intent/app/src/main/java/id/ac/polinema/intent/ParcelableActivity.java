@@ -30,11 +30,8 @@ public class ParcelableActivity extends AppCompatActivity {
         String name = nameInput.getText().toString();
         int age = Integer.parseInt(ageInput.getText().toString());
         User user = new User(username, name, age);
-        user.setUsername(username);
-        user.setName(name);
-        user.setAge(age);
-        Intent intent = new Intent(this, ProfileBundleActivity.class);
-        intent.putExtra(USER_KEY, user);
+        Intent intent = new Intent(this, ProfileParcelableActivity.class);
+        intent.putExtra("user", user);
         startActivity(intent);
     }
 }
